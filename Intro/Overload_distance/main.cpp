@@ -45,7 +45,7 @@ public:
 			i++;
 		}
 
-		this->denominator = Pow(i, 10);
+		this->denominator = Pow(10, i);
 		cout << "Constructor double:\t" << this << endl;
 	}
 	Fraction(int numerator, int denominator)
@@ -210,7 +210,7 @@ public:
 			}
 		}
 	}
-	int Pow(int pow_x, int x)
+	int Pow(int x, int pow_x)
 	{
 		int buffer = x;
 		while (pow_x > 1)
