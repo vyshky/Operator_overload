@@ -223,7 +223,7 @@ A.set_y(3);*/
 	Point A(2, 3);
 	Point B(3, 4);	
 	cout << (A == B) << endl;
-	//cout << (A != B) << endl;
+	cout << (A != B) << endl;
 
 	cout << A << endl;
 	/*A.set_x(33);

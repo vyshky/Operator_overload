@@ -2,6 +2,7 @@
 using namespace std;
 #define tab '\t'
 
+double distance_fo(const Point& A, const Point& B);
 class Point
 {
 public:
@@ -26,7 +27,6 @@ public:
 		cout << this << tab << "X = " << x << tab << "Y = " << y << endl << endl;
 	}
 };
-double distance_fo(const Point& A, const Point& B);
 
 int main()
 {

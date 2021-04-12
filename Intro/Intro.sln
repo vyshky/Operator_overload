@@ -7,6 +7,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Intro", "Intro\Intro.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Point_distance", "Point_distance\Point_distance.vcxproj", "{6B0222AD-BE3F-4C7A-9601-B3642A816D82}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Overload_Fraction", "Overload_distance\Overload_distance.vcxproj", "{C8D5E4FD-1CA7-420B-960B-F92C62C4522F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class_String", "Class_String\Class_String.vcxproj", "{F211284A-2C5A-4029-9CCA-D61B85A74359}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +35,22 @@ Global
 		{6B0222AD-BE3F-4C7A-9601-B3642A816D82}.Release|x64.Build.0 = Release|x64
 		{6B0222AD-BE3F-4C7A-9601-B3642A816D82}.Release|x86.ActiveCfg = Release|Win32
 		{6B0222AD-BE3F-4C7A-9601-B3642A816D82}.Release|x86.Build.0 = Release|Win32
+		{C8D5E4FD-1CA7-420B-960B-F92C62C4522F}.Debug|x64.ActiveCfg = Debug|x64
+		{C8D5E4FD-1CA7-420B-960B-F92C62C4522F}.Debug|x64.Build.0 = Debug|x64
+		{C8D5E4FD-1CA7-420B-960B-F92C62C4522F}.Debug|x86.ActiveCfg = Debug|Win32
+		{C8D5E4FD-1CA7-420B-960B-F92C62C4522F}.Debug|x86.Build.0 = Debug|Win32
+		{C8D5E4FD-1CA7-420B-960B-F92C62C4522F}.Release|x64.ActiveCfg = Release|x64
+		{C8D5E4FD-1CA7-420B-960B-F92C62C4522F}.Release|x64.Build.0 = Release|x64
+		{C8D5E4FD-1CA7-420B-960B-F92C62C4522F}.Release|x86.ActiveCfg = Release|Win32
+		{C8D5E4FD-1CA7-420B-960B-F92C62C4522F}.Release|x86.Build.0 = Release|Win32
+		{F211284A-2C5A-4029-9CCA-D61B85A74359}.Debug|x64.ActiveCfg = Debug|x64
+		{F211284A-2C5A-4029-9CCA-D61B85A74359}.Debug|x64.Build.0 = Debug|x64
+		{F211284A-2C5A-4029-9CCA-D61B85A74359}.Debug|x86.ActiveCfg = Debug|Win32
+		{F211284A-2C5A-4029-9CCA-D61B85A74359}.Debug|x86.Build.0 = Debug|Win32
+		{F211284A-2C5A-4029-9CCA-D61B85A74359}.Release|x64.ActiveCfg = Release|x64
+		{F211284A-2C5A-4029-9CCA-D61B85A74359}.Release|x64.Build.0 = Release|x64
+		{F211284A-2C5A-4029-9CCA-D61B85A74359}.Release|x86.ActiveCfg = Release|Win32
+		{F211284A-2C5A-4029-9CCA-D61B85A74359}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
