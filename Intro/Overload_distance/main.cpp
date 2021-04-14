@@ -79,7 +79,7 @@ public:
 	{
 		return denominator;
 	}
-	void set_integer(double integerr)
+	void set_integer(double integer)
 	{
 		this->integer = integer;
 	}
@@ -363,6 +363,13 @@ int main()
 	double F = double(E);
 	cout << "Double " << F << endl << endl;
 	//////////////////////////////////////////////////////////////////////
+
+	Fraction BB(12, 15, 14);
+	Fraction AA(6, 5, 7);
+
+	Fraction AB = BB / AA;
+	cout << "______________________________";
+	cout << AB << endl;
 #endif // TYPE_CONVERSION
 
 
