@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include <stdlib.h>
 using namespace std;
@@ -45,7 +45,7 @@ public:
 			i++;
 		}
 
-		this->denominator = Pow(10, i);
+		this->denominator = Pow(i, 10);
 		cout << "Constructor double:\t" << this << endl;
 	}
 	Fraction(int numerator, int denominator)
@@ -79,7 +79,7 @@ public:
 	{
 		return denominator;
 	}
-	void set_integer(double integerr)
+	void set_integer(double integer)
 	{
 		this->integer = integer;
 	}
@@ -210,7 +210,7 @@ public:
 			}
 		}
 	}
-	int Pow(int x, int pow_x)
+	int Pow(int pow_x, int x)
 	{
 		int buffer = x;
 		while (pow_x > 1)
@@ -363,11 +363,20 @@ int main()
 	double F = double(E);
 	cout << "Double " << F << endl << endl;
 	//////////////////////////////////////////////////////////////////////
+
+	Fraction BB(12, 15, 14);
+	Fraction AA(6, 5, 7);
+
+	Fraction AB = BB / AA;
+	cout << "______________________________";
+	cout << AB << endl;
 #endif // TYPE_CONVERSION
 
 
 }
 ////////////////////////////
+
+
 
 
 
