@@ -29,25 +29,21 @@ public:
 		this->denominator = 1;
 		cout << "Constructor1:\t" << this << endl;
 	}
+	
 	Fraction(double decimal)
-	{
+		{
 		this->integer = decimal;
 		double buffer = decimal - integer;
-		buffer *= 10;//Определяем сколько цифр взять после запятой
-		int i = 0;
+		buffer += 1e-15;
+		int i = 10000;//Определяем сколько цифр взять после запятой
+		buffer *= i;
 
 		this->numerator = buffer;
-		this->denominator = buffer;
+		this->denominator = i;
 
-		while (this->denominator != 0)
-		{
-			this->denominator /= 10;
-			i++;
-		}
-
-		this->denominator = Pow(i, 10);
 		cout << "Constructor double:\t" << this << endl;
-	}
+		}
+	
 	Fraction(int numerator, int denominator)
 	{
 		this->integer = 0;
