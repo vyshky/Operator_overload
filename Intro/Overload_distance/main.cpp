@@ -29,9 +29,9 @@ public:
 		this->denominator = 1;
 		cout << "Constructor1:\t" << this << endl;
 	}
-	
+	//////////////////////////////////////////////////////////////////////////////////
 	Fraction(double decimal)
-		{
+	{
 		this->integer = decimal;
 		double buffer = decimal - integer;
 		buffer += 1e-15;
@@ -42,8 +42,8 @@ public:
 		this->denominator = i;
 
 		cout << "Constructor double:\t" << this << endl;
-		}
-	
+	}
+	/////////////////////////////////////////////////////////////////////////////////
 	Fraction(int numerator, int denominator)
 	{
 		this->integer = 0;
