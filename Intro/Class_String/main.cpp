@@ -118,7 +118,7 @@ ostream& operator<<(ostream& os, const String& obj)
 }  
 
 istream& operator>>(istream& is, String& obj)
-{
+{ 
 	char* str = new char[20];
 	SetConsoleCP(1251);
 	is.getline(str, obj.get_n());
@@ -153,7 +153,9 @@ int main()
 
 	cout << "A : " << A << endl << endl << endl;
 	String D;
-	D = C;
+	D = C; 
+
+	cout << "Введите D " << endl;
 	cin >> D;
 	cout << "D = C : " << D << endl << endl << endl;
 	cout << "D = C : " << C << endl << endl << endl;
