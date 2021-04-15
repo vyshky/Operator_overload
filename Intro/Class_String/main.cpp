@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <Windows.h>
 using namespace std;
 using std::cout;
@@ -42,7 +42,7 @@ public:
 	{		
 		strcpy_s(this->str, this->n, obj.str);
 		cout << "CopyAssigment:\t\t" << this << endl;
-		return *this; // Ïåðåäàåì ïî çíà÷åíèþ
+		return *this; // ÐŸÐµÑ€ÐµÐ´Ð°ÐµÐ¼ Ð¿Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÑŽ
 	}
 
 	/////////////////////////////////////// 
@@ -115,7 +115,7 @@ ostream& operator<<(ostream& os, const String& obj)
 		os << obj.get_str(i);
 	}
 	return os;
-}
+}  
 
 istream& operator>>(istream& is, String& obj)
 {
@@ -135,7 +135,7 @@ int main()
 	String A("He llo");
 	cout << "A() : " << A << endl << endl << endl;
 
-	cout << "Ââåäèòå À " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð " << endl;
 	cin >> A;
 	cout << "A : " << A << endl << endl << endl;
 
@@ -144,7 +144,7 @@ int main()
 	
 	cout << "B = A B : " << B << endl << endl << endl;
 
-	cout << "Ââåäèòå B " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ B " << endl;
 	cin >> B;
 	cout << endl << endl << endl;
 
