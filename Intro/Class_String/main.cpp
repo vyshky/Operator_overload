@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <Windows.h>
 using namespace std;
 using std::cout;
@@ -39,7 +39,7 @@ public:
 	}
 
 	String& operator = (String& obj)
-	{		
+	{
 		strcpy_s(this->str, this->n, obj.str);
 		cout << "CopyAssigment:\t\t" << this << endl;
 		return *this; // Передаем по значению
@@ -75,10 +75,6 @@ public:
 	{
 		this->n = n;
 	}
-	void copy_str(char* str)
-	{
-		strcpy_s(this->str, this->n, str);
-	}
 	//////////////////////////////////////
 	//LENGHT
 	/////////////////////////////////////
@@ -87,6 +83,13 @@ public:
 		int i = 0;
 		for (; str[i]; i++);
 		return i;
+	}
+	//////////////////////////////////////
+	//COPY_STR
+	/////////////////////////////////////
+	void copy_str(char* str)
+	{
+		strcpy_s(this->str, this->n, str);
 	}
 };
 
@@ -115,10 +118,10 @@ ostream& operator<<(ostream& os, const String& obj)
 		os << obj.get_str(i);
 	}
 	return os;
-}  
+}
 
 istream& operator>>(istream& is, String& obj)
-{ 
+{
 	char* str = new char[20];
 	SetConsoleCP(1251);
 	is.getline(str, obj.get_n());
@@ -133,32 +136,33 @@ int main()
 	setlocale(LC_ALL, "rus");
 
 	String A("He llo");
-	cout << "A() : " << A << endl << endl << endl;
+	cout << "A() = " << A << endl << endl << endl;
 
 	cout << "Введите А " << endl;
 	cin >> A;
-	cout << "A : " << A << endl << endl << endl;
+	cout << "A = " << A << endl << endl << endl;
 
-	String B("BBB");
-	
-	
-	cout << "B = A B : " << B << endl << endl << endl;
+	String B;
+	B = A;
+
+	cout << "B = A == " << B << endl << endl << endl;
 
 	cout << "Введите B " << endl;
 	cin >> B;
 	cout << endl << endl << endl;
 
 	String C = B + A;
-	cout << "C = B + A : " << C << endl << endl << endl;
+	cout << "C = B + A == " << C << endl << endl << endl;
 
-	cout << "A : " << A << endl << endl << endl;
-	String D;
-	D = C; 
-
+	cout << "A = " << A << endl << endl << endl;
+	String D("DDDDDDDD");
+	D = C;
 	cout << "Введите D " << endl;
 	cin >> D;
-	cout << "D = C : " << D << endl << endl << endl;
-	cout << "D = C : " << C << endl << endl << endl;
+
+	cout << "D = C" << endl << "--------------------------------" << endl;
+	cout << "D == " << D << endl << endl << endl;
+	cout << "D == " << C << endl << endl << endl;
 
 	C += D;
 	cout << "C += D : " << C << endl << endl << endl;
