@@ -4,7 +4,6 @@ using namespace std;
 using std::cout;
 using std::cin;
 using std::endl;
-#define tab '\t' 
 
 class String
 {
@@ -16,9 +15,24 @@ public:
 		cout << "Constructor default:\t\t" << this << endl;
 	}
 	String(const char* str)
-	{
+	{	
+		cout << sizeof(*str) << endl;/////////////////////////////////////////////////////////////////////////////////////////
+
 		strcpy_s(this->str, this->n, str);
-		cout << "Constructor default:\t\t" << this << endl;
+		cout << "Constructor 1(" << this->str << "):\t\t" << this << endl;
+	}
+	String(String& right)
+	{
+		this->copy_str(right.str);
+		cout << "Constructor 2(A = B):\t\t" << this << endl;
+	}
+	String(String& left, String& right)
+	{
+		String buffer = left;		
+		buffer += right;
+		this->n = buffer.n;
+		this->copy_str(buffer.str);
+		cout << "Constructor 3(" << this << "= a + b):\t\t" << this << endl;
 	}
 	~String()
 	{
@@ -38,9 +52,9 @@ public:
 		return *this;
 	}
 
-	String& operator = (String& obj)
+	String& operator = (String& right)
 	{
-		strcpy_s(this->str, this->n, obj.str);
+		this->copy_str(right.str);
 		cout << "CopyAssigment:\t\t" << this << endl;
 		return *this; // Передаем по значению
 	}
@@ -56,7 +70,7 @@ public:
 	{
 		return n;
 	}
-	char get_str()const
+	char get_str()const ///const константный метод
 	{
 		return *str;
 	}
@@ -99,8 +113,7 @@ String& operator+(String& left, String& right)
 	String X;
 	int len_l = left.Lenght();
 	int len_r = right.Lenght();
-	int n = len_l + len_r;
-
+	X.set_n(len_l + len_r);
 	for (int i = 0; i < len_l; i++)
 	{
 		X.set_str(i, left.get_str(i));
@@ -135,37 +148,53 @@ int main()
 {
 	setlocale(LC_ALL, "rus");
 
-	String A("He llo");
-	cout << "A() = " << A << endl << endl << endl;
+	String A = "LO";
+	cout << "A() == " << A << endl << endl << endl;
 
 	cout << "Введите А " << endl;
 	cin >> A;
-	cout << "A = " << A << endl << endl << endl;
+	cout << "A == " << A << endl << endl << endl;
 
-	String B;
+	String B = A;
 	B = A;
 
-	cout << "B = A == " << B << endl << endl << endl;
+	cout << "B = A" << endl;
+	cout << "B == " << B << endl << endl << endl;
 
 	cout << "Введите B " << endl;
 	cin >> B;
+	cout << endl << "--------------------------------" << endl;
+	cout << "A == " << A << endl << endl << endl;
+	cout << "B == " << B << endl << endl << endl;
 	cout << endl << endl << endl;
 
-	String C = B + A;
-	cout << "C = B + A == " << C << endl << endl << endl;
+	String C(B, A);
+	cout << "C = B + A" << endl;
+	cout << "C == " << C << endl << endl << endl;
 
-	cout << "A = " << A << endl << endl << endl;
+	cout << endl << "--------------------------------" << endl;
+	cout << "A == " << A << endl << endl << endl;
+	cout << "B == " << B << endl << endl << endl;
+	cout << "C == " << C << endl << endl << endl;
+
 	String D("DDDDDDDD");
 	D = C;
+	cout << "D = C" << endl;
+	cout << "D == " << D << endl << endl << endl;
+
 	cout << "Введите D " << endl;
 	cin >> D;
 
-	cout << "D = C" << endl << "--------------------------------" << endl;
-	cout << "D == " << D << endl << endl << endl;
-	cout << "D == " << C << endl << endl << endl;
 
 	C += D;
-	cout << "C += D : " << C << endl << endl << endl;
+	cout << "C += D" << endl;
+	cout << "C == " << C << endl << endl << endl;
+
+	cout << endl << "--------------------------------" << endl;
+	cout << "A = " << A << endl << endl << endl;
+	cout << "B == " << B << endl << endl << endl;
+	cout << "C == " << C << endl << endl << endl;
+	cout << "D == " << D << endl << endl << endl;
 
 	return 0;
 }
